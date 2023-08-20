@@ -39,6 +39,7 @@ public class SecurityConfiguration {
                 )
                 .authorizeHttpRequests()
                 .antMatchers("/v1/auth/register", "/v1/auth/login").permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
