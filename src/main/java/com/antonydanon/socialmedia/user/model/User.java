@@ -1,6 +1,7 @@
 package com.antonydanon.socialmedia.user.model;
 
 import com.antonydanon.socialmedia.post.model.Post;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,6 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,7 +28,8 @@ public class User implements UserDetails {
 
     private String password;
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
     @Override

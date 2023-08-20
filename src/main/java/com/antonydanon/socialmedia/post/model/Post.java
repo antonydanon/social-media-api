@@ -1,6 +1,7 @@
 package com.antonydanon.socialmedia.post.model;
 
 import com.antonydanon.socialmedia.user.model.User;
+import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -23,6 +24,8 @@ public class Post {
 
     private LocalDate creationDate;
 
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
 }
