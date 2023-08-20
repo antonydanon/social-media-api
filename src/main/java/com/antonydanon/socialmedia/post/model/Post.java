@@ -1,10 +1,10 @@
 package com.antonydanon.socialmedia.post.model;
 
 import com.antonydanon.socialmedia.user.model.User;
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
